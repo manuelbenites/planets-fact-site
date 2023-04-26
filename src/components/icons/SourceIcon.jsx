@@ -1,4 +1,4 @@
-export default function IconSource(props) {
+export default function SourceIcon(props) {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" {...props}>
 			<path
