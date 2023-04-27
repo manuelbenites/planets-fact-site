@@ -26,6 +26,13 @@ export const data = [
 			internal: "./assets/planet-mercury-internal.svg",
 			geology: "./assets/geology-mercury.png",
 		},
+		bg: "bg-mercury",
+		colorDescription: "bg-steel-blue",
+		width: {
+			mobile: "w-[111px]",
+			tablet: "md:w-[184px]",
+			desktop: "",
+		},
 	},
 	{
 		name: "Venus",
@@ -52,6 +59,13 @@ export const data = [
 			planet: "./assets/planet-venus.svg",
 			internal: "./assets/planet-venus-internal.svg",
 			geology: "./assets/geology-venus.png",
+		},
+		bg: "bg-venus",
+		colorDescription: "bg-sandy-brown",
+		width: {
+			mobile: "w-[154px]",
+			tablet: "md:w-[253px]",
+			desktop: "",
 		},
 	},
 	{
@@ -80,6 +94,13 @@ export const data = [
 			internal: "./assets/planet-earth-internal.svg",
 			geology: "./assets/geology-earth.png",
 		},
+		bg: "bg-earth",
+		colorDescription: "bg-blue-violet",
+		width: {
+			mobile: "w-[173px]",
+			tablet: "md:w-[285px]",
+			desktop: "",
+		},
 	},
 	{
 		name: "Mars",
@@ -106,6 +127,13 @@ export const data = [
 			planet: "./assets/planet-mars.svg",
 			internal: "./assets/planet-mars-internal.svg",
 			geology: "./assets/geology-mars.png",
+		},
+		bg: "bg-mars",
+		colorDescription: "bg-chocolate",
+		width: {
+			mobile: "w-[129px]",
+			tablet: "md:w-[213px]",
+			desktop: "",
 		},
 	},
 	{
@@ -135,6 +163,13 @@ export const data = [
 			internal: "./assets/planet-jupiter-internal.svg",
 			geology: "./assets/geology-jupiter.png",
 		},
+		bg: "bg-jupiter",
+		colorDescription: "bg-crimson",
+		width: {
+			mobile: "w-[224px]",
+			tablet: "md:w-[369px]",
+			desktop: "",
+		},
 	},
 	{
 		name: "Saturn",
@@ -161,6 +196,13 @@ export const data = [
 			planet: "./assets/planet-saturn.svg",
 			internal: "./assets/planet-saturn-internal.svg",
 			geology: "./assets/geology-saturn.png",
+		},
+		bg: "bg-saturn",
+		colorDescription: "bg-sienna",
+		width: {
+			mobile: "w-[256px]",
+			tablet: "md:w-[422px]",
+			desktop: "",
 		},
 	},
 	{
@@ -189,6 +231,13 @@ export const data = [
 			internal: "./assets/planet-uranus-internal.svg",
 			geology: "./assets/geology-uranus.png",
 		},
+		bg: "bg-uranus",
+		colorDescription: "bg-light-sea-green",
+		width: {
+			mobile: "w-[176px]",
+			tablet: "md:w-[290px]",
+			desktop: "",
+		},
 	},
 	{
 		name: "Neptune",
@@ -215,6 +264,13 @@ export const data = [
 			planet: "./assets/planet-neptune.svg",
 			internal: "./assets/planet-neptune-internal.svg",
 			geology: "./assets/geology-neptune.png",
+		},
+		bg: "bg-neptune",
+		colorDescription: "bg-royal-blue",
+		width: {
+			mobile: "w-[173px]",
+			tablet: "md:w-[285px]",
+			desktop: "",
 		},
 	},
 ]

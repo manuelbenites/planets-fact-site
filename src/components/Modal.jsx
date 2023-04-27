@@ -1,5 +1,5 @@
 import { usePlanets } from "../hooks/usePlanets"
-import { planets } from "../utils/planets"
+import { data } from "../utils/data"
 import ChevronIcon from "./icons/ChevronIcon"
 
 function Modal() {
@@ -13,11 +13,11 @@ function Modal() {
 			{modal && (
 				<div className="absolute z-50 w-full bg-midnight-blue top-[68px] bg-midnight-bluebg-midnight-blue">
 					<div className="flex flex-col gap-10 px-6 pt-11">
-						{planets.map((item, index) => (
+						{data.map((item, index) => (
 							<button
 								className="flex justify-between items-center"
 								key={index}
-								name={item.planet}
+								name={item.name}
 								onClick={handleChangePlanet}
 							>
 								<span className="flex gap-6 pointer-events-none">
@@ -27,7 +27,7 @@ function Modal() {
 										}
 									></span>
 									<span className="font-bold pointer-events-none font-[League-Spartan] text-[15px] tracking-[1.36px]">
-										{item.planet.toUpperCase()}
+										{item.name.toUpperCase()}
 									</span>
 								</span>
 								<ChevronIcon className="pointer-events-none" />

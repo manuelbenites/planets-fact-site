@@ -1,6 +1,8 @@
 import { usePlanets } from "../hooks/usePlanets"
 import { data } from "../utils/data"
 
+import SourceIcon from "./icons/SourceIcon"
+
 const GEOLOGY_OPTION = "geology"
 
 function Planets() {
@@ -11,11 +13,18 @@ function Planets() {
 				.filter((item) => item.name == planet)
 				.map((element, index) => (
 					<div key={index} className="relative z-30">
-						<div className="flex justify-center items-center h-[300px]">
-							<div className="relative h-[111px] w-[111px]">
+						<div className="flex justify-center items-center min-h-[300px]">
+							<div
+								className={
+									"relative " +
+									element.width.mobile +
+									" " +
+									element.width.tablet
+								}
+							>
 								<img src={element.images[image]} />
 								{description === GEOLOGY_OPTION && (
-									<div className="absolute top-[55px] h-[70px] w-[70px]">
+									<div className="absolute left-2/4 -translate-x-2/4 bottom-[-10px] w-[70px]">
 										<img className="relative" src={element.images.geology} />
 									</div>
 								)}
@@ -28,18 +37,19 @@ function Planets() {
 							<p className="mb-8 font-spartan text-[14px] leading-[22px]">
 								{element[description].content}
 							</p>
-							<p className="opacity-50 font-spartan text-[14px]">
+							<p className="flex justify-center opacity-50 font-spartan text-[14px]">
 								Source:{" "}
 								<a
-									className="font-bold opacity-50"
+									className="flex items-center font-bold opacity-50"
 									href={element[description].source}
 								>
 									Wikipedia
+									<SourceIcon />
 								</a>
 							</p>
 						</div>
 						<div className="flex flex-col gap-2 mt-7">
-							<div className="flex justify-between items-center px-6 h-12 border border-white border-opacity-50">
+							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									rotation time
 								</p>
@@ -47,7 +57,7 @@ function Planets() {
 									{element.rotation}
 								</p>
 							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-white border-opacity-50">
+							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									revolution time
 								</p>
@@ -55,7 +65,7 @@ function Planets() {
 									{element.revolution}
 								</p>
 							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-white border-opacity-50">
+							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									radius
 								</p>
@@ -63,7 +73,7 @@ function Planets() {
 									{element.radius}
 								</p>
 							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-white border-opacity-50">
+							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									average temp.
 								</p>
