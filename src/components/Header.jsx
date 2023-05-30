@@ -1,54 +1,47 @@
 import { usePlanets } from "../hooks/usePlanets"
 import { data } from "../utils/data"
 import MenuIcon from "../components/icons/MenuIcon"
-
-const CHOICES = [
-	{
-		content: "overview",
-		description: "overview",
-		image: "planet",
-	},
-	{
-		content: "structure",
-		description: "structure",
-		image: "internal",
-	},
-	{
-		content: "surface",
-		description: "geology",
-		image: "planet",
-	},
-]
+import { getPlanetColorUnderline, CHOICES } from "../utils/functions"
 
 export default function Header() {
-	const { modal, description, setModal, setDescription, setImage } =
-		usePlanets()
+	const {
+		modal,
+		planet,
+		setPlanet,
+		description,
+		setModal,
+		setDescription,
+		setImage,
+	} = usePlanets()
 	const handleChangePlanetImage = (e) => {
 		setDescription(e.target.getAttribute("data-description"))
 		setImage(e.target.getAttribute("data-image"))
+	}
+	const handleChangePlanet = (e) => {
+		setPlanet(e.target.name)
 	}
 	const handleToggleModal = () => {
 		!modal ? setModal(true) : setModal(false)
 	}
 	return (
 		<header className="relative z-30">
-			<div className="flex justify-between items-center px-6 border-b border-dark-slate-gray h-[68px]">
+			<nav className="flex justify-between items-center px-6 border-b md:justify-center md:border-0 border-dark-slate-gray h-[68px]">
 				<h1 className="font-['Antonio'] uppercase text-[28px] font-normal tracking-[-1.05px]">
 					the planets
 				</h1>
-				<button onClick={handleToggleModal}>
+				<button onClick={handleToggleModal} className="md:hidden">
 					{modal ? (
 						<MenuIcon className="pointer-events-none fill-dark-slate-gray" />
 					) : (
 						<MenuIcon className="pointer-events-none fill-white" />
 					)}
 				</button>
-			</div>
-			<div className="flex justify-between px-6 border-b border-dark-slate-gray h-[50px]">
+			</nav>
+			<ul className="flex justify-between px-6 border-b md:justify-center border-dark-slate-gray h-[50px]">
 				{CHOICES.map((choice, index) => (
-					<div
+					<li
 						key={index}
-						className="flex relative justify-center items-center w-20"
+						className="flex relative justify-center items-center w-20 md:hidden"
 					>
 						<button
 							className="font-bold uppercase opacity-50 focus:opacity-100 text-[12px] tracking-[1.93px] font-spartan"
@@ -59,11 +52,29 @@ export default function Header() {
 							{choice.content}
 						</button>
 						{choice.description === description && (
-							<div className="absolute w-20 h-1 bottom-[-1px] bg-steel-blue"></div>
+							<div
+								className={
+									"absolute w-20 h-1 bottom-[-1px] " +
+									getPlanetColorUnderline(planet)
+								}
+							></div>
 						)}
-					</div>
+					</li>
 				))}
-			</div>
+				<ul className="hidden justify-between w-full md:flex max-w-[665px]">
+					{data.map((item, index) => (
+						<li key={index}>
+							<button
+								name={item.name}
+								className="font-bold uppercase text-[14px] font-spartan"
+								onClick={handleChangePlanet}
+							>
+								{item.name}
+							</button>
+						</li>
+					))}
+				</ul>
+			</ul>
 		</header>
 	)
 }

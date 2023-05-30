@@ -1,19 +1,24 @@
 import { usePlanets } from "../hooks/usePlanets"
 import { data } from "../utils/data"
+import { CHOICES } from "../utils/functions"
 
 import SourceIcon from "./icons/SourceIcon"
 
 const GEOLOGY_OPTION = "geology"
 
 function Planets() {
-	const { image, planet, description } = usePlanets()
+	const { image, planet, description, setDescription, setImage } = usePlanets()
+	const handleChangePlanetImage = (e) => {
+		setDescription(e.target.getAttribute("data-description"))
+		setImage(e.target.getAttribute("data-image"))
+	}
 	return (
-		<main className="relative z-40 px-6 pb-10">
+		<main className="relative z-40 px-6 pb-10 md:px-10">
 			{data
 				.filter((item) => item.name == planet)
 				.map((element, index) => (
-					<div key={index} className="relative z-30">
-						<div className="flex justify-center items-center min-h-[300px]">
+					<section key={index} className="relative z-30">
+						<div className="flex justify-center items-center h-[300px] md:h-[430px]">
 							<div
 								className={
 									"relative " +
@@ -30,59 +35,77 @@ function Planets() {
 								)}
 							</div>
 						</div>
-						<div className="text-center">
-							<h1 className="font-['Antonio'] uppercase text-[40px] mb-4">
-								{element.name}
-							</h1>
-							<p className="mb-8 font-spartan text-[14px] leading-[22px]">
-								{element[description].content}
-							</p>
-							<p className="flex justify-center opacity-50 font-spartan text-[14px]">
-								Source:{" "}
-								<a
-									className="flex items-center font-bold opacity-50"
-									href={element[description].source}
-								>
-									Wikipedia
-									<SourceIcon />
-								</a>
-							</p>
+						<div className="flex flex-row gap-[60px]">
+							<div className="text-center md:text-start">
+								<h1 className="font-['Antonio'] uppercase text-[40px] mb-4">
+									{element.name}
+								</h1>
+								<p className="mb-8 font-spartan text-[14px] leading-[22px]">
+									{element[description].content}
+								</p>
+								<p className="flex justify-center opacity-50 md:justify-start font-spartan text-[14px]">
+									Source:{" "}
+									<a
+										className="flex items-center font-bold opacity-50"
+										href={element[description].source}
+									>
+										Wikipedia
+										<SourceIcon />
+									</a>
+								</p>
+							</div>
+							<ul className="hidden flex-col gap-4 justify-center md:flex">
+								{CHOICES.map((choice, index) => (
+									<li key={index}>
+										<button
+											className="flex justify-start items-center border w-[281px] h-[40px] pl-[50px] border-dark-slate-gray"
+											data-description={choice.description}
+											data-image={choice.image}
+											onClick={handleChangePlanetImage}
+										>
+											<span className="font-bold uppercase pointer-events-none font-spartan tracking-[1.93px] text-[12px]">
+												{choice.content}
+											</span>
+										</button>
+									</li>
+								))}
+							</ul>
 						</div>
-						<div className="flex flex-col gap-2 mt-7">
-							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
+						<ul className="flex flex-col gap-2 mt-7 md:flex-row">
+							<li className="flex justify-between items-center px-6 w-full h-12 border md:flex-col md:justify-around md:items-start md:py-2 border-dark-slate-gray md:h-[88px]">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									rotation time
 								</p>
-								<p className="font-['Antonio'] text-[20px] leading-[25px]">
+								<p className="font-['Antonio'] text-[20px] md:text-[24px] leading-[25px] md:leading-[31px]">
 									{element.rotation}
 								</p>
-							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
+							</li>
+							<li className="flex justify-between items-center px-6 w-full h-12 border md:flex-col md:justify-around md:items-start md:py-2 border-dark-slate-gray md:h-[88px]">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									revolution time
 								</p>
-								<p className="font-['Antonio'] text-[20px] leading-[25px]">
+								<p className="font-['Antonio'] text-[20px] md:text-[24px] leading-[25px] md:leading-[31px]">
 									{element.revolution}
 								</p>
-							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
+							</li>
+							<li className="flex justify-between items-center px-6 w-full h-12 border md:flex-col md:justify-around md:items-start md:py-2 border-dark-slate-gray md:h-[88px]">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									radius
 								</p>
-								<p className="font-['Antonio'] text-[20px] leading-[25px]">
+								<p className="font-['Antonio'] text-[20px] md:text-[24px] leading-[25px] md:leading-[31px]">
 									{element.radius}
 								</p>
-							</div>
-							<div className="flex justify-between items-center px-6 h-12 border border-dark-slate-gray">
+							</li>
+							<li className="flex justify-between items-center px-6 w-full h-12 border md:flex-col md:justify-around md:items-start md:py-2 border-dark-slate-gray md:h-[88px]">
 								<p className="font-bold uppercase opacity-50 tracking-[0.77px] font-spartan text-[11px]">
 									average temp.
 								</p>
-								<p className="font-['Antonio'] text-[20px] leading-[25px]">
+								<p className="font-['Antonio'] text-[20px] md:text-[24px] leading-[25px] md:leading-[31px]">
 									{element.temperature}
 								</p>
-							</div>
-						</div>
-					</div>
+							</li>
+						</ul>
+					</section>
 				))}
 		</main>
 	)
