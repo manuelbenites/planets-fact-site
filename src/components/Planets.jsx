@@ -23,7 +23,7 @@ function PlanetSurfaceImageOptions() {
 						></div>
 					)}
 					<button
-						className="flex relative justify-start items-center border w-[281px] h-[40px] pl-[50px] border-dark-slate-gray lg:h-[48px] lg:w-[350px]"
+						className="flex relative justify-start items-center border w-[281px] h-[40px] pl-[50px] border-dark-slate-gray lg:h-[48px] lg:w-[350px] hover:bg-dark-slate-gray"
 						data-description={choice.description}
 						data-image={choice.image}
 						onClick={handleChangePlanetImage}

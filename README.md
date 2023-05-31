@@ -14,8 +14,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub]()
-- Live Site URL: [Vercel](()
+- Solution URL: [GitHub](https://github.com/manuelbenites/portfolio-next)
+- Live Site URL: [Vercel](https://planets-fact-site-sigma.vercel.app/)
 
 ### Built with
 
