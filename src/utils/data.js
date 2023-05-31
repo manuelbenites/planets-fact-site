@@ -31,7 +31,7 @@ export const data = [
 		width: {
 			mobile: "w-[111px]",
 			tablet: "md:w-[184px]",
-			desktop: "",
+			desktop: "xl:w-[290px]",
 		},
 	},
 	{
@@ -65,7 +65,7 @@ export const data = [
 		width: {
 			mobile: "w-[154px]",
 			tablet: "md:w-[253px]",
-			desktop: "",
+			desktop: "xl:w-[400px]",
 		},
 	},
 	{
@@ -99,7 +99,7 @@ export const data = [
 		width: {
 			mobile: "w-[173px]",
 			tablet: "md:w-[285px]",
-			desktop: "",
+			desktop: "xl:w-[450px]",
 		},
 	},
 	{
@@ -133,7 +133,7 @@ export const data = [
 		width: {
 			mobile: "w-[129px]",
 			tablet: "md:w-[213px]",
-			desktop: "",
+			desktop: "xl:w-[336px]",
 		},
 	},
 	{
@@ -168,7 +168,7 @@ export const data = [
 		width: {
 			mobile: "w-[224px]",
 			tablet: "md:w-[369px]",
-			desktop: "",
+			desktop: "xl:w-[582px]",
 		},
 	},
 	{
@@ -202,7 +202,7 @@ export const data = [
 		width: {
 			mobile: "w-[256px]",
 			tablet: "md:w-[422px]",
-			desktop: "",
+			desktop: "xl:w-[666px]",
 		},
 	},
 	{
@@ -236,7 +236,7 @@ export const data = [
 		width: {
 			mobile: "w-[176px]",
 			tablet: "md:w-[290px]",
-			desktop: "",
+			desktop: "xl:w-[458px]",
 		},
 	},
 	{
@@ -270,7 +270,7 @@ export const data = [
 		width: {
 			mobile: "w-[173px]",
 			tablet: "md:w-[285px]",
-			desktop: "",
+			desktop: "xl:w-[450px]",
 		},
 	},
 ]

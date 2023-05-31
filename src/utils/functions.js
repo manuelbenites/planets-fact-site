@@ -1,22 +1,25 @@
 export const CHOICES = [
 	{
-		content: "overview",
+		mobile: "overview",
+		tablet: "overview",
 		description: "overview",
 		image: "planet",
 	},
 	{
-		content: "structure",
+		mobile: "structure",
+		tablet: "internal structure",
 		description: "structure",
 		image: "internal",
 	},
 	{
-		content: "surface",
+		mobile: "surface",
+		tablet: "surface geology",
 		description: "geology",
 		image: "planet",
 	},
 ]
 
-const planetColorUnderline = {
+const planetColor = {
 	Mercury: "bg-steel-blue",
 	Venus: "bg-sandy-brown",
 	Earth: "bg-blue-violet",
@@ -27,6 +30,6 @@ const planetColorUnderline = {
 	Neptune: "bg-royal-blue",
 }
 
-export const getPlanetColorUnderline = (planet) => {
-	return planetColorUnderline[planet]
+export const getPlanetColor = (planet) => {
+	return planetColor[planet]
 }
